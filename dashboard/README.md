@@ -6,9 +6,9 @@ Ovaj repo je za frontend ovog projekta.
 
 ## Članovi
 
-Luka Rukavina
-Dominik Milošević 
-Silvio Glogović
+Luka Rukavina,
+Dominik Milošević,
+Silvio Glogović,
 Tin Fiolić
 
 ## Cilj projekta
