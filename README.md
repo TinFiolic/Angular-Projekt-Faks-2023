@@ -1,4 +1,4 @@
-# Projekt za TVZ 2023, predmet "Programsko inžinjerstvo u otvorenim sustavima"
+# Projekt za TVZ 2023, predmet "Programsko inženjerstvo u otvorenim sustavima"
 
 ## Frontend repo
 
