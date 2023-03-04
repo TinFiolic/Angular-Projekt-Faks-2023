@@ -25,6 +25,9 @@ import { ForgotpassComponent } from './forgotpass/forgotpass.component';
     MatGridListModule,
     MatRadioModule
   ],
+  exports: [
+    MainComponent
+  ],
   providers: [],
   bootstrap: [MainComponent]
 })
