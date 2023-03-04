@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
+import { registerLocaleData } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,10 @@ import { ForgotpassComponent } from './forgotpass/forgotpass.component';
     MatRadioModule
   ],
   exports: [
-    MainComponent
+    MainComponent, 
+    LoginComponent, 
+    RegisterComponent, 
+    ForgotpassComponent
   ],
   providers: [],
   bootstrap: [MainComponent]
