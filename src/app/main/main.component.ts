@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'app-main',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  activeScreen: string = "login"; 
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  setActiveScreen(screen: string){
+    this.activeScreen = screen;
   }
 
 }

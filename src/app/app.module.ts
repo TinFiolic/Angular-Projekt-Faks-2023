@@ -7,19 +7,23 @@ import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatGridListModule} from '@angular/material/grid-list'; 
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatRadioModule } from '@angular/material/radio';
+import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
-    MainComponent
+    MainComponent,
+    ForgotpassComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatGridListModule
+    MatGridListModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [MainComponent]

@@ -1,3 +1,13 @@
-<app-login></app-login>
+<span *ngIf="activeScreen=='login'">
+    <app-login></app-login>
+</span>
+
+<span *ngIf="activeScreen=='register'">
+    <app-register></app-register>
+</span>
+
+<span *ngIf="activeScreen=='forgotpass'">
+    <app-forgotpass></app-forgotpass>
+</span>
 
   

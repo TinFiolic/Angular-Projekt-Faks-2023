@@ -1,1 +1,35 @@
-<p>register works!</p>
+<div class="body">
+    <form method="post" action="index.html">
+        <div class="box">
+            <div class="logo"></div>
+
+            <p class="title">E-mail adresa:</p>
+            <input type="email" name="email" placeholder="@tvz e-mail adresa" class="email" />
+
+            <p class="title">Lozinka:</p>
+            <input type="password" name="password" class="password" />
+
+            <p class="title">Ponovna lozinka:</p>
+            <input type="password" name="password" class="password" />
+
+            <p class="title">Odaberite rolu:</p>
+            <span class="rola">
+                <input type="radio" id="nastavnik" name="rola" value="Nastavnik" checked="checked">
+                <label for="nastavnik">Nastavnik</label>
+                <input type="radio" id="student" name="rola" value="Student" style="margin-left: 30px">
+                <label for="student">Student</label>
+            </span>
+
+            <a href="#">
+                <div id="btn_registracija">Registriraj me</div>
+            </a>
+
+            <a href="#">
+                <div class="btn_prijava" (click)="main.setActiveScreen('login')">Prijava</div>
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
