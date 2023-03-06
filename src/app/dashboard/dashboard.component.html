@@ -1,0 +1,19 @@
+<div class="body">
+    <div class="logo"></div>
+    <span style="float: right; color: white; font-size: 15px; margin-top: -170px; margin-right: 10px;">
+        Dobrodošli, <b>{{user}}</b>! (<a href="#" (click)="onLogout()">odjava</a>)
+    </span>
+    <header>
+        <div class="menu">
+            <br> <br>
+            <span class="menu_item"><a href="#">korisnik</a></span> <br> <br> <br> <br> 
+            <span class="menu_item"><a href="#">kolegiji</a></span> <br> <br> <br> <br> 
+            <span class="menu_item"><a href="#">todo</a></span> <br> <br> <br> <br>
+            <span class="menu_item"><a href="#">vijesti</a></span> <br> <br> <br> <br> 
+        </div>
+    </header>
+</div>
+
+<div *ngIf="activeMenu=='user'">
+    <app-korisnik></app-korisnik>
+</div>

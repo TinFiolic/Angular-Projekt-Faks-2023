@@ -11,13 +11,17 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { registerLocaleData } from '@angular/common';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { KorisnikComponent } from './korisnik/korisnik.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
     MainComponent,
-    ForgotpassComponent
+    ForgotpassComponent,
+    DashboardComponent,
+    KorisnikComponent
   ],
   imports: [
     BrowserModule,

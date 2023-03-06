@@ -16,6 +16,9 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem("user") != null && sessionStorage.getItem("user") != undefined) {
+      this.setActiveScreen("dashboard");
+    }
   }
 
   setActiveScreen(screen: string){

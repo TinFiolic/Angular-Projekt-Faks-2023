@@ -16,5 +16,6 @@ export class LoginComponent implements OnInit {
   onLogin() {
     sessionStorage.setItem("user", "User");
     sessionStorage.setItem("role", "1");
+    this.main.setActiveScreen("dashboard");
   }
 }
