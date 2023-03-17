@@ -1,8 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 
 @Component({
   selector: 'app-main',
