@@ -13,6 +13,7 @@ import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { registerLocaleData } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { KorisnikComponent } from './korisnik/korisnik.component';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { KorisnikComponent } from './korisnik/korisnik.component';
     MainComponent, 
     LoginComponent, 
     RegisterComponent, 
-    ForgotpassComponent
+    ForgotpassComponent,
+    DashboardComponent
   ],
   providers: [],
   bootstrap: [MainComponent]

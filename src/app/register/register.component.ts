@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MainComponent } from '../main/main.component';
 
 @Component({
@@ -8,7 +9,7 @@ import { MainComponent } from '../main/main.component';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(public main: MainComponent) { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }

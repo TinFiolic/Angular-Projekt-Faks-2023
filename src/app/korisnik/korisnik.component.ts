@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
@@ -8,9 +9,13 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 })
 export class KorisnikComponent implements OnInit {
 
-  constructor(public dashboard: DashboardComponent) { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  getUsername() {
+    return sessionStorage.getItem("user");
   }
 
 }

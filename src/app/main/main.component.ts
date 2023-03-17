@@ -1,6 +1,5 @@
-import { Component, Injectable, OnInit } from '@angular/core';
-
-@Injectable()
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -9,18 +8,11 @@ import { Component, Injectable, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  activeScreen: string = "login"; 
-
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    if(sessionStorage.getItem("user") != null && sessionStorage.getItem("user") != undefined) {
-      this.setActiveScreen("dashboard");
-    }
+    /*if(sessionStorage.getItem("user") != null && sessionStorage.getItem("user") != undefined) {
+      this.router.navigate(['/dashboard'])
+    }*/
   }
-
-  setActiveScreen(screen: string){
-    this.activeScreen = screen;
-  }
-
 }
