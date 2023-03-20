@@ -1,4 +1,4 @@
-<app-login *ngIf="getOpenedComponent() == 'login'"></app-login>
+<app-login *ngIf="getOpenedComponent() == 'login' || getOpenedComponent() == undefined || getOpenedComponent() == null ||getOpenedComponent() == ''"></app-login>
 <app-register *ngIf="getOpenedComponent() == 'register'"></app-register>
 <app-forgotpass *ngIf="getOpenedComponent() == 'forgotpassword'"></app-forgotpass>
 <app-dashboard *ngIf="getOpenedComponent() == 'dashboard'"></app-dashboard>

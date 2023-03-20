@@ -10,7 +10,6 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    localStorage.setItem("openedComponent", "login");
   }
 
   getOpenedComponent() {
