@@ -22,7 +22,8 @@
         </div>
         <br>
         <div *ngFor="let event of this.selectedCalendarDateEvents; index as i" class="entry">
-            <b>{{event.title}}</b>, izvođač: <b>{{event.profesor}}</b>, lokacija održavanja: <b>{{event.location}}</b>, vrijeme održavanja: <b>{{event.time}}</b>
+            <b style="color: #E6AC45">{{event.time}}</b> - <b style="color: #F1441E">{{event.title}}</b> <br> <hr>
+            lokacija održavanja: <b>{{event.location}}</b> <br> izvođač: <b>{{event.profesor}}</b>
         </div>
 
         <div class="entry" *ngIf="this.selectedCalendarDateEvents.length == 0" style="text-align: center;">

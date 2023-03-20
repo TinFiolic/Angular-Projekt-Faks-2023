@@ -14,10 +14,10 @@
 
 #modal {
     background-color: #1E2729;
-    border: 2px solid white;
+    border: 2px solid #252E30;
     position: absolute;
     width: 30%;
-    height: 70%;
+    padding-bottom: 2em;
     z-index: 210;
     top: 10em;
     left: 45em;
@@ -36,10 +36,10 @@ h1 {
     min-height: 1em;
     width: 90%;
     padding: 1em;
-    background-color: #F1441E;
-    color: #ffffff;
+    background-color: #252E30;
+    color: #fff;
     border-radius: 5px;
-    border: 1px solid #803109;
+    border: 1px solid #2b3335;
 }
 
 #notifications {

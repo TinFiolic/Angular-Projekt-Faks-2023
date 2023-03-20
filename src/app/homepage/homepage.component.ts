@@ -18,13 +18,13 @@ export class HomepageComponent implements OnInit {
   selectedCalendarDateEvents : any[] = [];
   calendarEvents : any[] = [
     { title: 'Programiranje u C-u', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '12:42 do 14:52', date: '2023-03-20' },
-    { title: 'Uvod u UNIX', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '12:42 do 14:52', description: 'ddddd', date: '2023-03-20' },
-    { title: 'Programiranje u Pythonu', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '12:42 do 14:52', date: '2023-03-21' },
-    { title: 'Predavanje o dijalizi krvi', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '12:42 do 14:52', date: '2023-03-21' },
-    { title: 'Posjet doktoru', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '12:42 do 14:52', date: '2023-03-21' },
-    { title: 'Zašto ja ovo pišem', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '12:42 do 14:52', date: '2023-03-21' },
-    { title: 'Lud sam više od ovog', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '12:42 do 14:52', date: '2023-03-21' },
-    { title: 'Ovo je predmet', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '12:42 do 14:52', date: '2023-03-21' }
+    { title: 'Uvod u UNIX', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '12:22 do 14:52', description: 'ddddd', date: '2023-03-20' },
+    { title: 'Programiranje u Pythonu', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '16:42 do 17:52', date: '2023-03-21' },
+    { title: 'Predavanje o dijalizi krvi', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '16:43 do 18:52', date: '2023-03-21' },
+    { title: 'Posjet doktoru', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '11:42 do 17:52', date: '2023-03-21' },
+    { title: 'Zašto ja ovo pišem', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '10:42 do 19:52', date: '2023-03-21' },
+    { title: 'Lud sam više od ovog', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '12:42 do 14:22', date: '2023-03-21' },
+    { title: 'Ovo je predmet', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '12:12 do 12:52', date: '2023-03-21' }
   ];
 
   notifications : any[] = [
@@ -67,6 +67,8 @@ export class HomepageComponent implements OnInit {
         this.selectedCalendarDateEvents.push(this.calendarEvents[key]);
       }
     });
+
+    this.selectedCalendarDateEvents.sort((a, b) => a.time.localeCompare(b.time));
   }
 
 
