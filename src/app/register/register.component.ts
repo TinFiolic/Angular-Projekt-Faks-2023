@@ -10,10 +10,10 @@ export class RegisterComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    sessionStorage.setItem("openedComponent", "register");
+    localStorage.setItem("openedComponent", "register");
   }
 
   setOpenedComponent(component : string) {
-    sessionStorage.setItem("openedComponent", component);
+    localStorage.setItem("openedComponent", component);
   }
 }

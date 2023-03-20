@@ -10,10 +10,10 @@ export class ForgotpassComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    sessionStorage.setItem("openedComponent", "forgotpassword");
+    localStorage.setItem("openedComponent", "forgotpassword");
   }
 
   setOpenedComponent(component : string) {
-    sessionStorage.setItem("openedComponent", component);
+    localStorage.setItem("openedComponent", component);
   }
 }

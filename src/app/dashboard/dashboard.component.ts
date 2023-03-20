@@ -13,14 +13,14 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    sessionStorage.setItem("openedComponent", "dashboard");
-    this.user = sessionStorage.getItem("user");
+    localStorage.setItem("openedComponent", "dashboard");
+    this.user = localStorage.getItem("user");
   }
 
   onLogout(){
-    sessionStorage.setItem("user", null);
-    sessionStorage.setItem("role", null);
-    sessionStorage.setItem("openedComponent", "login");
+    localStorage.setItem("user", null);
+    localStorage.setItem("role", null);
+    localStorage.setItem("openedComponent", "login");
   }
 
   setActiveMenu(menu: string){
@@ -32,6 +32,6 @@ export class DashboardComponent implements OnInit {
   }
 
   setOpenedComponent(component : string) {
-    sessionStorage.setItem("openedComponent", component);
+    localStorage.setItem("openedComponent", component);
   }
 }

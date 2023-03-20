@@ -10,15 +10,15 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    sessionStorage.setItem("openedComponent", "login");
+    localStorage.setItem("openedComponent", "login");
   }
 
   getOpenedComponent() {
-    var openedComponent = sessionStorage.getItem("openedComponent");
+    var openedComponent = localStorage.getItem("openedComponent");
     return openedComponent;
   }
 
   setOpenedComponent(component : string) {
-    sessionStorage.setItem("openedComponent", component);
+    localStorage.setItem("openedComponent", component);
   }
 }

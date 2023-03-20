@@ -10,16 +10,16 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    sessionStorage.setItem("openedComponent", "login");
+    localStorage.setItem("openedComponent", "login");
   }
 
   onLogin() {
-    sessionStorage.setItem("user", "User");
-    sessionStorage.setItem("role", "1");
-    sessionStorage.setItem("openedComponent", "dashboard");
+    localStorage.setItem("user", "User");
+    localStorage.setItem("role", "1");
+    localStorage.setItem("openedComponent", "dashboard");
   }
 
   setOpenedComponent(component : string) {
-    sessionStorage.setItem("openedComponent", component);
+    localStorage.setItem("openedComponent", component);
   }
 }
