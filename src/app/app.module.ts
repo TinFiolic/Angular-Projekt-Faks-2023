@@ -7,8 +7,6 @@ import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatRadioModule } from '@angular/material/radio';
 import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { registerLocaleData } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -31,8 +29,6 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatGridListModule,
-    MatRadioModule,
     FullCalendarModule
   ],
   exports: [
