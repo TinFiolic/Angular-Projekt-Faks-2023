@@ -13,14 +13,14 @@
                 <div class="btn_prijava" (click)="onLogin()">Prijavi me</div>
             </a>
             
-            <a href="/register" ng-click="">
+            <a (click)="this.setOpenedComponent('register')">
                 <div id="btn_registracija" >Registracija</div>
             </a>
 
         </div>
 
     </form>
-    <a href="/forgotpassword" ng-click="">
+    <a (click)="this.setOpenedComponent('forgotpassword')">
         <p>Zaboravili ste lozinku? <u style="color:#f1c40f; cursor: pointer;">Pritisnite ovdje!</u></p>
     </a>
 </div>

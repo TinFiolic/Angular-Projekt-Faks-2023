@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { MainComponent } from '../main/main.component';
 
 @Component({
   selector: 'app-login',
@@ -9,14 +7,19 @@ import { MainComponent } from '../main/main.component';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
+    sessionStorage.setItem("openedComponent", "login");
   }
 
   onLogin() {
     sessionStorage.setItem("user", "User");
     sessionStorage.setItem("role", "1");
-    location.href = '/dashboard';
+    sessionStorage.setItem("openedComponent", "dashboard");
+  }
+
+  setOpenedComponent(component : string) {
+    sessionStorage.setItem("openedComponent", component);
   }
 }

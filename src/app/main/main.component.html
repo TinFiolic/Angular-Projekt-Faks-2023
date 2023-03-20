@@ -1,1 +1,4 @@
-<router-outlet></router-outlet>
+<app-login *ngIf="getOpenedComponent() == 'login'"></app-login>
+<app-register *ngIf="getOpenedComponent() == 'register'"></app-register>
+<app-forgotpass *ngIf="getOpenedComponent() == 'forgotpassword'"></app-forgotpass>
+<app-dashboard *ngIf="getOpenedComponent() == 'dashboard'"></app-dashboard>

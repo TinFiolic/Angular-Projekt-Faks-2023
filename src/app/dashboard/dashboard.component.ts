@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatGridTileHeaderCssMatStyler } from '@angular/material/grid-list';
-import { Router } from '@angular/router';
-import { MainComponent } from '../main/main.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,22 +8,19 @@ import { MainComponent } from '../main/main.component';
 export class DashboardComponent implements OnInit {
   
   user: string = "";
-  activeMenu = "user";
+  activeMenu = "homepage";
 
-  constructor(public router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-    if(sessionStorage.getItem("user") != null && sessionStorage.getItem("user") != undefined && sessionStorage.getItem("user") != "null") {
-      this.user = sessionStorage.getItem("user"); 
-    } else {
-      location.href = '/login';
-    }
+    sessionStorage.setItem("openedComponent", "dashboard");
+    this.user = sessionStorage.getItem("user");
   }
 
   onLogout(){
     sessionStorage.setItem("user", null);
     sessionStorage.setItem("role", null);
-    location.href = '/login';
+    sessionStorage.setItem("openedComponent", "login");
   }
 
   setActiveMenu(menu: string){
@@ -37,4 +31,7 @@ export class DashboardComponent implements OnInit {
     return this.user;
   }
 
+  setOpenedComponent(component : string) {
+    sessionStorage.setItem("openedComponent", component);
+  }
 }

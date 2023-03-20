@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { MainComponent } from '../main/main.component';
 
 @Component({
   selector: 'app-register',
@@ -9,9 +7,13 @@ import { MainComponent } from '../main/main.component';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
+    sessionStorage.setItem("openedComponent", "register");
   }
 
+  setOpenedComponent(component : string) {
+    sessionStorage.setItem("openedComponent", component);
+  }
 }

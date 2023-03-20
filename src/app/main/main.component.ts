@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -8,11 +7,18 @@ import { Router } from '@angular/router';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-    /*if(sessionStorage.getItem("user") != null && sessionStorage.getItem("user") != undefined) {
-      this.router.navigate(['/dashboard'])
-    }*/
+    sessionStorage.setItem("openedComponent", "login");
+  }
+
+  getOpenedComponent() {
+    var openedComponent = sessionStorage.getItem("openedComponent");
+    return openedComponent;
+  }
+
+  setOpenedComponent(component : string) {
+    sessionStorage.setItem("openedComponent", component);
   }
 }
