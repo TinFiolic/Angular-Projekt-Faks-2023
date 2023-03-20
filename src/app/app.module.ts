@@ -14,6 +14,8 @@ import { registerLocaleData } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { KorisnikComponent } from './korisnik/korisnik.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HomepageComponent } from './homepage/homepage.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [
@@ -22,21 +24,22 @@ import { RouterModule, Routes } from '@angular/router';
     MainComponent,
     ForgotpassComponent,
     DashboardComponent,
-    KorisnikComponent
+    KorisnikComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatGridListModule,
-    MatRadioModule
+    MatRadioModule,
+    FullCalendarModule
   ],
   exports: [
     MainComponent, 
     LoginComponent, 
     RegisterComponent, 
-    ForgotpassComponent,
-    DashboardComponent
+    ForgotpassComponent
   ],
   providers: [],
   bootstrap: [MainComponent]
