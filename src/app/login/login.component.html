@@ -9,7 +9,7 @@
             <p class="title">Lozinka:</p>
             <input type="password" name="password" class="password" />
 
-            <a href="#">
+            <a>
                 <div class="btn_prijava" (click)="onLogin()">Prijavi me</div>
             </a>
             
@@ -20,7 +20,7 @@
         </div>
 
     </form>
-    <a (click)="this.setOpenedComponent('forgotpassword')">
+    <a (click)="this.setOpenedComponent('forgotpassword')" hidden="hidden">
         <p>Zaboravili ste lozinku? <u style="color:#f1c40f; cursor: pointer;">Pritisnite ovdje!</u></p>
     </a>
 </div>

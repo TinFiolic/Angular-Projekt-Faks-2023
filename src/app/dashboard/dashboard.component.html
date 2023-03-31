@@ -1,19 +1,37 @@
 <div class="body">
     <div class="logo"></div>
     <span style="float: right; color: white; font-size: 15px; margin-top: -170px; margin-right: 10px;">
-        Dobrodošli, <b>{{user}}</b>! (<a href="#" (click)="onLogout()">odjava</a>)
+        Dobrodošli, <b>{{user}}</b>! (<a style="cursor: pointer;" (click)="onLogout()">odjava</a>)
     </span>
     <header>
         <div class="menu">
             <br> <br>
-            <span class="menu_item"><a href="#">korisnik</a></span> <br> <br> <br> <br> 
-            <span class="menu_item"><a href="#">kolegiji</a></span> <br> <br> <br> <br> 
-            <span class="menu_item"><a href="#">todo</a></span> <br> <br> <br> <br>
-            <span class="menu_item"><a href="#">vijesti</a></span> <br> <br> <br> <br> 
+            <a (click)="this.setActiveMenu('homepage')"><span class="menu_item">kalendar</span></a> <br> <br> <br> <br> 
+            <a (click)="this.setActiveMenu('korisnik')"><span class="menu_item"><a>korisnik</a></span></a>  <br> <br> <br> <br> 
+            <a (click)="this.setActiveMenu('todo')"><span class="menu_item"><a>todo</a></span></a>  <br> <br> <br> <br> 
+            <a (click)="this.setActiveMenu('mail')"><span class="menu_item"><a>e-mail</a></span></a>  <br> <br> <br> <br>
+            <a (click)="this.setActiveMenu('studenti')"><span class="menu_item"><a>pregled studenata</a></span></a>  <br> <br> <br> <br>  
+            <a (click)="this.setActiveMenu('kolegiji')"><span class="menu_item"><a>pregled kolegija</a></span></a>  <br> <br> <br> <br> 
+            <a (click)="this.setActiveMenu('upis_kolegija')"><span class="menu_item"><a>upis kolegija</a></span></a>  <br> <br> <br> <br> 
+            <a (click)="this.setActiveMenu('upisani_kolegiji')"><span class="menu_item"><a>upisani kolegiji</a></span></a>  <br> <br> <br> <br> 
+            <a (click)="this.setActiveMenu('kreacija_kolegija')"><span class="menu_item"><a>kreiraj kolegij</a></span></a>  <br> <br> <br> <br> 
+            <a (click)="this.setActiveMenu('ocjene')"><span class="menu_item"><a>upis ocjena</a></span></a>  <br> <br> <br> <br> 
         </div>
     </header>
 </div>
 
 <div *ngIf="activeMenu=='homepage'">
 	<app-homepage></app-homepage>
+</div>
+
+<div *ngIf="activeMenu=='korisnik'">
+	<app-korisnik></app-korisnik>
+</div>
+
+<div *ngIf="activeMenu=='todo'">
+	<app-todo></app-todo>
+</div>
+
+<div *ngIf="activeMenu=='mail'">
+	<app-mail></app-mail>
 </div>

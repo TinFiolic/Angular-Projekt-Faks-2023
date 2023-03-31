@@ -6,6 +6,7 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import * as $ from 'jquery';
 import { DatePipe } from '@angular/common';
+import axios from 'axios';
 
 @Component({
   selector: 'app-homepage',
@@ -16,24 +17,7 @@ export class HomepageComponent implements OnInit {
 
   selectedCalendarDate : string = "";
   selectedCalendarDateEvents : any[] = [];
-  calendarEvents : any[] = [
-    { title: 'Programiranje u C-u', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '12:00 do 14:00', date: '2023-03-20' },
-    { title: 'Uvod u UNIX', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '12:00 do 16:', description: 'ddddd', date: '2023-03-20' },
-    { title: 'Programiranje u Pythonu', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '13:30 do 17:00', date: '2023-03-21' },
-    { title: 'Predavanje o tome i tome', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '10:30 do 18:00', date: '2023-03-21' },
-    { title: 'Prezentacija o svemu', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '11:00 do 17:30', date: '2023-03-21' },
-    { title: 'Isto neki predmet', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '10:30 do 19:30', date: '2023-03-21' },
-    { title: 'Ovo je drugi predmet', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '12:00 do 14:30', date: '2023-03-21' },
-    { title: 'Ovo je predmet', profesor: 'dr. sc. Davor Cafuta', location: 'Trg Žrtava Fašizma 2, učionica 234', time: '12:30 do 13:00', date: '2023-03-21' }
-  ];
-
-  notifications : any[] = [
-    { course: 'Programiranje u C-u', author: 'dr. sc. Davor Cafuta', fromDateTime: '23.02.2023.', toDateTime: '27.02.2023.', header: 'Sad cemo programirati!', description: 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recen' },
-    { course: 'Programiranje u C-u', author: 'dr. sc. Davor Cafuta', fromDateTime: '23.02.2023.', toDateTime: '27.02.2023.', header: 'Sad cemo programirati!', description: 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recen' },
-    { course: 'Programiranje u C-u', author: 'dr. sc. Davor Cafuta', fromDateTime: '23.02.2023.', toDateTime: '27.02.2023.', header: 'Sad cemo programirati!', description: 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recen' },
-    { course: 'Programiranje u C-u', author: 'dr. sc. Davor Cafuta', fromDateTime: '23.02.2023.', toDateTime: '27.02.2023.', header: 'Sad cemo programirati!', description: 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recen' },
-    { course: 'Programiranje u C-u', author: 'dr. sc. Davor Cafuta', fromDateTime: '23.02.2023.', toDateTime: '27.02.2023.', header: 'Sad cemo programirati!', description: 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recen' }
-  ];
+  calendarEvents : any[] = [];
 
 
   calendarOptions: CalendarOptions = {
@@ -78,6 +62,20 @@ export class HomepageComponent implements OnInit {
     $("#modal_bg").fadeOut(0);
     $("#modal_bg").click(function() {
       $("#modal_bg").fadeOut();
+    });
+
+    this.getUsers();
+  }
+
+  async getUsers() {
+    axios.get('https://pious2023-backed.onrender.com/schedule/student/' + localStorage.getItem("userId"))
+    .then(response => {
+      this.calendarEvents = response.data;
+      console.log('Calendar events:', this.calendarEvents);
+      this.calendarOptions.events = response.data;
+    })
+    .catch(error => {
+      console.error('Error getting calendar events:', error);
     });
   }
 }

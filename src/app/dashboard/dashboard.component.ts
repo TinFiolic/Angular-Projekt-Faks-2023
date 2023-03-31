@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import axios from 'axios';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,6 +21,7 @@ export class DashboardComponent implements OnInit {
   onLogout(){
     localStorage.setItem("user", null);
     localStorage.setItem("role", null);
+    localStorage.setItem("userId", null);
     localStorage.setItem("openedComponent", "login");
   }
 
@@ -34,4 +36,5 @@ export class DashboardComponent implements OnInit {
   setOpenedComponent(component : string) {
     localStorage.setItem("openedComponent", component);
   }
+
 }

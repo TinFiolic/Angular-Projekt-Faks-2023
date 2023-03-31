@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
     localStorage.setItem("user", "User");
     localStorage.setItem("role", "1");
     localStorage.setItem("openedComponent", "dashboard");
+    localStorage.setItem("userId", "1");
   }
 
   setOpenedComponent(component : string) {

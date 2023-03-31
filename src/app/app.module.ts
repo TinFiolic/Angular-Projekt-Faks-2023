@@ -11,6 +11,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { KorisnikComponent } from './korisnik/korisnik.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { HttpClientModule } from '@angular/common/http';
+import { TodoComponent } from './todo/todo.component';
+import { MailComponent } from './mail/mail.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -20,12 +24,16 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     ForgotpassComponent,
     DashboardComponent,
     KorisnikComponent,
-    HomepageComponent
+    HomepageComponent,
+    TodoComponent,
+    MailComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FullCalendarModule
+    FullCalendarModule,
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   exports: [
     MainComponent, 

@@ -13,7 +13,11 @@ export class KorisnikComponent implements OnInit {
   }
 
   getUsername() {
-    return sessionStorage.getItem("user");
+    return localStorage.getItem("user");
+  }
+
+  getRole() {
+    return localStorage.getItem("role");
   }
 
 }

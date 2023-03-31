@@ -1,20 +1,5 @@
 <full-calendar [options]="calendarOptions" (dateClick)="handleDateClick($event)" style="color: white; width: 60%; margin-left: 35em; margin-top: -5em;"></full-calendar>
 
-<h1 style="color: #E6AC45; font-weight: bold; text-align: center; margin-right: 30em; margin-top: 2em; font-size: 26px;">Obavijesti</h1> <hr style="border: 1px solid #E6AC45;">
-
-<div id="notifications">
-    <div class="notification" *ngFor="let notification of this.notifications; index as index">
-        <span style="margin-left: 0.3em; margin-top: 0.3em; color: #fff; float: left;">Kolegij: <b style="color: #E6AC45">{{notification.course}}</b></span>
-        <span style="margin-left: 0.3em; margin-top: 0.3em; color: #fff; float: right;">Autor: <b style="color: #E6AC45">{{notification.author}}</b></span>
-        <br><br>
-        <span style="margin-left: 0.3em; margin-top: 0.3em; color: #fff;">Obavijest traje od <b style="color: #E6AC45">{{notification.fromDateTime}}</b></span>
-        <span style="margin-left: 0.3em; margin-top: 0.3em; color: #fff;">do <b style="color: #E6AC45">{{notification.toDateTime}}</b></span>
-        <br><br>
-        <h1>{{notification.header}}</h1> <hr style="border: 1px solid #E6AC45;">
-        <p style="margin-left: 0.3em; margin-top: 0.3em; color: #fff; text-indent: 3em;">{{notification.description}}</p>
-    </div>
-</div>
-
 <div id="modal_bg" (click)="this.selectedCalendarDateEvents = []">
     <div id="modal">
         <div>
@@ -22,8 +7,8 @@
         </div>
         <br>
         <div *ngFor="let event of this.selectedCalendarDateEvents; index as i" class="entry">
-            <b style="color: #E6AC45">{{event.time}}</b> - <b style="color: #F1441E">{{event.title}}</b> <br> <hr>
-            lokacija održavanja: <b>{{event.location}}</b> <br> izvođač: <b>{{event.profesor}}</b>
+            <b style="color: #E6AC45">{{event.timeFrom}} - {{event.timeTo}}</b> - <b style="color: #F1441E">{{event.title}}</b> <br> <hr>
+            lokacija održavanja: <b>{{event.location}}</b> <br> izvođač: <b>{{event.professor}}</b>
         </div>
 
         <div class="entry" *ngIf="this.selectedCalendarDateEvents.length == 0" style="text-align: center;">

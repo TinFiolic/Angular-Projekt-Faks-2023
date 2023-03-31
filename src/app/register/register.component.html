@@ -3,25 +3,31 @@
         <div class="box">
             <div class="logo"></div>
 
-            <p class="title">E-mail adresa:</p>
-            <input type="email" name="email" placeholder="@tvz e-mail adresa" class="email" />
+            <p class="title">Ime</p>
+            <input type="text" name="ime" class="email" #ime />
+
+            <p class="title">Prezime</p>
+            <input type="text" name="prezime" class="email" #prezime />
+
+            <p class="title">JMBAG</p>
+            <input type="text" name="jmbag" class="email" #jmbag_ />
 
             <p class="title">Lozinka:</p>
-            <input type="password" name="password" class="password" />
+            <input type="password" name="password" class="password" #lozinka />
 
             <p class="title">Ponovna lozinka:</p>
-            <input type="password" name="password" class="password" />
+            <input type="password" name="password" class="password" #opetlozinka/>
 
             <p class="title">Odaberite rolu:</p>
             <span class="rola">
-                <input type="radio" id="nastavnik" name="rola" value="Nastavnik" checked="checked">
+                <input type="radio" id="nastavnik" name="rola" value="Nastavnik" checked="checked" #nastavnik>
                 <label for="nastavnik">Nastavnik</label>
-                <input type="radio" id="student" name="rola" value="Student" style="margin-left: 30px">
+                <input type="radio" id="student" name="rola" value="Student" style="margin-left: 30px" #student>
                 <label for="student">Student</label>
             </span>
 
-            <a href="#">
-                <div id="btn_registracija">Registriraj me</div>
+            <a>
+                <div id="btn_registracija" (click)="registerAccount(ime.value, prezime.value, jmbag_.value, lozinka.value, opetlozinka.value, nastavnik.checked, student.checked)">Registriraj me</div>
             </a>
 
             <a (click)="this.setOpenedComponent('login')">

@@ -1,0 +1,36 @@
+<div class="body">
+    <div class="info">
+        <h1 style="color: #E6AC44;">Pošalji poruku</h1> <hr style="border: 1px solid #1E2729;">
+        <table style="margin-left: 17.5em;">
+            <tr>
+              <th>
+              </th>
+            </tr>
+            <tr>
+              <td class="info_box">
+                <div>
+                  Primatelj: <hr style="width: 10em; border: 1px solid #1E2729;">
+                  <select name="primatelj">
+                    <option value="prvi">Prvi</option>
+                    <option value="drugi">Drugi</option>
+                  </select>
+              </div>
+              <br> <br>
+                <div>
+                    Naslov: <hr style="width: 10em; border: 1px solid #1E2729;">
+                    <input type="text" class="textarea">
+                </div>
+                <br> <br>
+                  <div>
+                      Poruka: <hr style="width: 10em; border: 1px solid #1E2729;">
+                      <textarea class="textbox"></textarea>
+                  </div>
+                  <br> <br>
+                  <div class="btn_prijava" (click)="sendMail()">Pošalji poruku</div>
+                  
+              </td>
+            </tr>
+          </table> 
+
+    </div>
+</div>

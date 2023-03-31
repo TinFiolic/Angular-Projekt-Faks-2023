@@ -1,42 +1,54 @@
 <div class="body">
     <div class="info">
-        <img src="https://www.prospectmagazine.co.uk/content/uploads/2016/11/Pepedankmeems420blazeitohbabyatripledankaestheticafkeepit100.jpg"
-            alt="Korisnička slika" width="300" height="300" class="image"> <br> <br>
-        <span style="font-size: 30px; font-weight: bold;">{{this.getUsername()}}</span> <br> <br>
-        <hr>
-        <table>
+      <h1 style="color: #E6AC44;">{{this.getUsername()}}</h1> <hr style="border: 1px solid #1E2729;">
+        <table style="margin-left: 17.5em;">
             <tr>
               <th>
-                Osobni podaci
-              </th>
-              <th>
-                Upisani kolegiji
               </th>
             </tr>
             <tr>
               <td class="info_box">
-                <div>
-                    Email adresa:
-                    <input type="email" name="email" placeholder="@tvz e-mail adresa" class="textbox" />
-                </div>
-                <br>
-                <div>
-                    Email adresa:
-                    <input type="email" name="email" placeholder="@tvz e-mail adresa" class="textbox" />
-                </div>
-                <br>
-                <div>
-                    Email adresa:
-                    <input type="email" name="email" placeholder="@tvz e-mail adresa" class="textbox" />
-                </div>
-                <br>
-                <div>
-                    Email adresa:
-                    <input type="email" name="email" placeholder="@tvz e-mail adresa" class="textbox" />
-                </div>
-              </td>
-              <td class="info_box">
+                <span *ngIf="this.getRole() == '0'">
+                  <div>
+                      Zanimanje: <hr style="width: 10em; border: 1px solid #1E2729;">
+                      <input type="text" name="occupation" class="textbox"/>
+                  </div>
+                  <br>
+                  <div>
+                      Adresa: <hr style="width: 10em; border: 1px solid #1E2729;">
+                      <input type="text" name="address" class="textbox"/>
+                  </div>
+                  <br>
+                  <div>
+                      Scholarship: <hr style="width: 10em; border: 1px solid #1E2729;">
+                      <input type="text" name="scholarship" class="textbox"/>
+                  </div>
+                  <br> <br>
+                  <a>
+                    <div class="btn_prijava" (click)="updateStudent()">Ažuriraj podatke</div>
+                  </a>
+                </span>
 
+                <span *ngIf="this.getRole() == '1'">
+                  <div>
+                      Title: <hr style="width: 10em; border: 1px solid #1E2729;">
+                      <input type="text" name="title" class="textbox"/>
+                  </div>
+                  <br>
+                  <div>
+                      Location: <hr style="width: 10em; border: 1px solid #1E2729;">
+                      <input type="text" name="location" class="textbox"/>
+                  </div>
+                  <br>
+                  <div>
+                      Consultations: <hr style="width: 10em; border: 1px solid #1E2729;">
+                      <input type="text" name="consultations" class="textbox"/>
+                  </div>
+                  <br> <br>
+                  <a>
+                    <div class="btn_prijava" (click)="updateProfessor()">Ažuriraj podatke</div>
+                  </a>
+                </span>
               </td>
             </tr>
           </table> 

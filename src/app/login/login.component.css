@@ -79,6 +79,8 @@ h1 {
     margin-left: 16px;
     font-weight: 800;
     font-size: 0.8em;
+
+    cursor: pointer;
 }
 
 .btn_prijava:hover {
@@ -100,6 +102,8 @@ h1 {
     margin-left: 10px;
     font-weight: 800;
     font-size: 0.8em;
+
+    cursor: pointer;
 }
 
 #btn_registracija:hover {
