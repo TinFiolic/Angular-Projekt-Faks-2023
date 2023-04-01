@@ -11,8 +11,7 @@
                 <div>
                   Primatelj: <hr style="width: 10em; border: 1px solid #1E2729;">
                   <select name="primatelj">
-                    <option value="prvi">Prvi</option>
-                    <option value="drugi">Drugi</option>
+                    <option *ngFor="let profesor of listaProfesora; index as i;">{{profesor.firstName}} {{profesor.lastName}}</option>
                   </select>
               </div>
               <br> <br>

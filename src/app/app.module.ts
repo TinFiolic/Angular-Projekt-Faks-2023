@@ -16,6 +16,7 @@ import { TodoComponent } from './todo/todo.component';
 import { MailComponent } from './mail/mail.component';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { KreirajKolegijComponent } from './kreiraj-kolegij/kreiraj-kolegij.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ToastrModule } from 'ngx-toastr';
     KorisnikComponent,
     HomepageComponent,
     TodoComponent,
-    MailComponent
+    MailComponent,
+    KreirajKolegijComponent
   ],
   imports: [
     BrowserModule,

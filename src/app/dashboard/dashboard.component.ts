@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-dashboard',
@@ -23,6 +24,14 @@ export class DashboardComponent implements OnInit {
     localStorage.setItem("role", null);
     localStorage.setItem("userId", null);
     localStorage.setItem("openedComponent", "login");
+
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Uspješno ste se odjavili',
+      showConfirmButton: false,
+      timer: 3000
+    })
   }
 
   setActiveMenu(menu: string){

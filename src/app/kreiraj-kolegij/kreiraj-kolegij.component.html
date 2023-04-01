@@ -1,0 +1,71 @@
+<div class="body">
+    <div class="info">
+        <h1 style="color: #E6AC44;">Kreiraj kolegij</h1> <hr style="border: 1px solid #1E2729;">
+        <table style="margin-left: 21em;">
+            <tr>
+              <th>
+              </th>
+            </tr>
+            <tr>
+              <td class="info_box">
+                <div>
+                  Nositelji kolegija: <hr style="width: 10em; border: 1px solid #1E2729;">
+                  <select name="profesori">
+                    <option *ngFor="let profesor of listaProfesora; index as i;" (click)="selektirajPrvi(profesor)">{{profesor.firstName}} {{profesor.lastName}}</option>
+                  </select>
+                </div>
+              <br>
+              <div class="btn_prijava" (click)="dodaj()">Dodaj profesora</div>
+              <br><br>
+              <div>
+                Izabrani profesori: <hr style="width: 10em; border: 1px solid #1E2729;">
+                <select name="izabrani" multiple>
+                  <option *ngFor="let profesor of listaProfesoraIzabranih; index as i;" (click)="selektirajDrugi(profesor)">{{profesor.firstName}} {{profesor.lastName}}</option>
+                </select>
+              </div>
+              <br>
+              <div class="btn_prijava" (click)="makni()">Makni profesora</div>
+            <br> <br>
+                <div>
+                    Ime: <hr style="width: 10em; border: 1px solid #1E2729;">
+                    <input type="text" class="textarea" [(ngModel)]="ime">
+                </div>
+                <br> <br>
+                <div>
+                  ECTS: <hr style="width: 10em; border: 1px solid #1E2729;">
+                  <input type="number" class="textarea" [(ngModel)]="ects">
+                </div>
+                <br> <br>
+                <div>
+                  Opis: <hr style="width: 10em; border: 1px solid #1E2729;">
+                  <input type="text" class="textarea" [(ngModel)]="opis">
+                </div>
+                <br> <br>
+                <div>
+                  Literatura: <hr style="width: 10em; border: 1px solid #1E2729;">
+                  <input type="text" class="textarea" [(ngModel)]="literatura">
+                </div>
+                <br> <br>
+                <div>
+                  Semestar: <hr style="width: 10em; border: 1px solid #1E2729;">
+                  <input type="number" class="textarea" [(ngModel)]="semestar">
+                </div>
+                <br> <br>
+                <div>
+                  Trajanje kolegija - od: <hr style="width: 10em; border: 1px solid #1E2729;">
+                  <input type="datetime-local" class="textarea" [(ngModel)]="datumOd">
+                </div>
+                <br> <br>
+                <div>
+                  Trajanje kolegija - do: <hr style="width: 10em; border: 1px solid #1E2729;">
+                  <input type="datetime-local" class="textarea" [(ngModel)]="datumDo">
+                </div>
+                <br> <br>
+                  <div class="btn_prijava" (click)="kreirajKolegij()">Pošalji poruku</div>
+                  
+              </td>
+            </tr>
+          </table> 
+
+    </div>
+</div>
