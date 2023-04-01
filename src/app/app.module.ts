@@ -14,6 +14,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { HttpClientModule } from '@angular/common/http';
 import { TodoComponent } from './todo/todo.component';
 import { MailComponent } from './mail/mail.component';
+import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     FullCalendarModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    FormsModule
   ],
   exports: [
     MainComponent, 

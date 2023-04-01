@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  username : string = "";
+  password : string = "";
+
   constructor() { }
 
   ngOnInit(): void {
@@ -14,10 +19,33 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    localStorage.setItem("user", "User");
-    localStorage.setItem("role", "1");
-    localStorage.setItem("openedComponent", "dashboard");
-    localStorage.setItem("userId", "1");
+    axios.post('https://pious2023-backed.onrender.com/account/login', {
+      email: this.username,
+      password: this.password
+    })
+    .then(response => {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Uspješno ste se prijavili kao ' + response.data.firstName + ' ' + response.data.lastName  + '.',
+        showConfirmButton: false,
+        timer: 2000
+      })
+
+      localStorage.setItem("user", response.data.username);
+      localStorage.setItem("role", response.data.role);
+      localStorage.setItem("userId", response.data.id);
+      localStorage.setItem("openedComponent", "dashboard");
+    })  
+    .catch(error => {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: error.response.data,
+          showConfirmButton: false,
+          timer: 3000
+        })
+    });
   }
 
   setOpenedComponent(component : string) {

@@ -4,10 +4,10 @@
             <div class="logo"></div>
 
             <p class="title">E-mail adresa:</p>
-            <input type="email" name="email" placeholder="@tvz e-mail adresa" class="email" />
+            <input type="email" name="email" placeholder="@tvz e-mail adresa" class="email" [(ngModel)]="username"/>
 
             <p class="title">Lozinka:</p>
-            <input type="password" name="password" class="password" />
+            <input type="password" name="password" class="password" [(ngModel)]="password"/>
 
             <a>
                 <div class="btn_prijava" (click)="onLogin()">Prijavi me</div>

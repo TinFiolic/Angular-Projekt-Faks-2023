@@ -1,27 +1,27 @@
 <div class="body">
     <div class="info">
       <h1 style="color: #E6AC44;">{{this.getUsername()}}</h1> <hr style="border: 1px solid #1E2729;">
-        <table style="margin-left: 17.5em;">
+        <table style="margin-left: 21em;">
             <tr>
               <th>
               </th>
             </tr>
             <tr>
               <td class="info_box">
-                <span *ngIf="this.getRole() == '0'">
+                <span *ngIf="this.getRole() == 'STUDENT'">
                   <div>
                       Zanimanje: <hr style="width: 10em; border: 1px solid #1E2729;">
-                      <input type="text" name="occupation" class="textbox"/>
+                      <input type="text" name="occupation" class="textbox" [(ngModel)]="occupation"/>
                   </div>
                   <br>
                   <div>
                       Adresa: <hr style="width: 10em; border: 1px solid #1E2729;">
-                      <input type="text" name="address" class="textbox"/>
+                      <input type="text" name="address" class="textbox" [(ngModel)]="address"/>
                   </div>
                   <br>
                   <div>
                       Scholarship: <hr style="width: 10em; border: 1px solid #1E2729;">
-                      <input type="text" name="scholarship" class="textbox"/>
+                      <input type="text" name="scholarship" class="textbox" [(ngModel)]="scholarship"/>
                   </div>
                   <br> <br>
                   <a>
@@ -29,20 +29,20 @@
                   </a>
                 </span>
 
-                <span *ngIf="this.getRole() == '1'">
+                <span *ngIf="this.getRole() == 'PROFESSOR'">
                   <div>
-                      Title: <hr style="width: 10em; border: 1px solid #1E2729;">
-                      <input type="text" name="title" class="textbox"/>
+                      Titula: <hr style="width: 10em; border: 1px solid #1E2729;">
+                      <input type="text" name="title" class="textbox" [(ngModel)]="title"/>
                   </div>
                   <br>
                   <div>
-                      Location: <hr style="width: 10em; border: 1px solid #1E2729;">
-                      <input type="text" name="location" class="textbox"/>
+                      Lokacija: <hr style="width: 10em; border: 1px solid #1E2729;">
+                      <input type="text" name="location" class="textbox" [(ngModel)]="location"/>
                   </div>
                   <br>
                   <div>
-                      Consultations: <hr style="width: 10em; border: 1px solid #1E2729;">
-                      <input type="text" name="consultations" class="textbox"/>
+                      Konzultacije: <hr style="width: 10em; border: 1px solid #1E2729;">
+                      <input type="text" name="consultations" class="textbox" [(ngModel)]="consultations"/>
                   </div>
                   <br> <br>
                   <a>
