@@ -17,12 +17,12 @@
               <br> <br>
                 <div>
                     Naslov: <hr style="width: 10em; border: 1px solid #1E2729;">
-                    <input type="text" class="textarea">
+                    <input type="text" class="textarea" [(ngModel)]="header">
                 </div>
                 <br> <br>
                   <div>
                       Poruka: <hr style="width: 10em; border: 1px solid #1E2729;">
-                      <textarea class="textbox"></textarea>
+                      <textarea class="textbox" [(ngModel)]="body"></textarea>
                   </div>
                   <br> <br>
                   <div class="btn_prijava" (click)="sendMail()">Pošalji poruku</div>

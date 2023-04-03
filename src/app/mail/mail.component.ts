@@ -11,18 +11,41 @@ export class MailComponent {
 
   listaProfesora : any[] = [];
 
+  header : string;
+  body : string;
+
   ngOnInit(): void {
     this.getProfessors();
   }
 
   sendMail() {
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Your work has been saved',
-      showConfirmButton: false,
-      timer: 1500
+    this.body.split('\n').join('<br>');
+    console.log(localStorage.getItem("userId"));
+    axios.post('https://pious2023-backed.onrender.com/email', {
+      emailTo: "nebitanmail@email.com",
+      header: this.header,
+      body: this.body,
+      accountId: localStorage.getItem("userId")
     })
+    .then(response => {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Uspješno ste poslali email.',
+        showConfirmButton: false,
+        timer: 2000
+      })
+    })  
+    .catch(error => {
+      console.log(error.response.data);
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: error.response.data,
+          showConfirmButton: false,
+          timer: 3000
+        })
+    });
   }
 
   getProfessors() {

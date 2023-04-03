@@ -9,7 +9,7 @@
             <tr>
               <td class="info_box">
                 <div>
-                  Nositelji kolegija: <hr style="width: 10em; border: 1px solid #1E2729;">
+                  Profesori: <hr style="width: 10em; border: 1px solid #1E2729;">
                   <select name="profesori">
                     <option *ngFor="let profesor of listaProfesora; index as i;" (click)="selektirajPrvi(profesor)">{{profesor.firstName}} {{profesor.lastName}}</option>
                   </select>
@@ -61,7 +61,7 @@
                   <input type="datetime-local" class="textarea" [(ngModel)]="datumDo">
                 </div>
                 <br> <br>
-                  <div class="btn_prijava" (click)="kreirajKolegij()">Pošalji poruku</div>
+                  <div class="btn_prijava" (click)="kreirajKolegij()">Kreiraj kolegij</div>
                   
               </td>
             </tr>

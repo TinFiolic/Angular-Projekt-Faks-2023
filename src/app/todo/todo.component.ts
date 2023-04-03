@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import axios from 'axios';
+import { parseISO } from 'date-fns';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-todo',
@@ -7,9 +10,17 @@ import { Component } from '@angular/core';
 })
 export class TodoComponent {
 
+  naslov: string;
+  opis: string;
+  datumOd: any;
+  datumDo: any;
+
+  todoevi: any = [];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.getTodo();
   }
 
   getUsername() {
@@ -20,6 +31,52 @@ export class TodoComponent {
     return localStorage.getItem("role");
   }
 
-  updateTodo() {}
+  getTodo() {
+    axios.get('https://pious2023-backed.onrender.com/todo/' + localStorage.getItem("userId"))
+    .then(response => {
+      this.todoevi = response.data
+      console.log(response.data);
+    })  
+    .catch(error => {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: error.response.data,
+          showConfirmButton: false,
+          timer: 3000
+        })
+    });
+  }
+
+  kreirajTodo() {
+    console.log(this.naslov + " " + this.opis + " " + parseISO(this.datumOd) + " " + parseISO(this.datumDo) + " " + localStorage.getItem("userId"));
+    axios.post('https://pious2023-backed.onrender.com/todo/save', {
+      accountId: localStorage.getItem("userId"),  
+      header: this.naslov,
+      description: this.opis,
+      fromDateTime: parseISO(this.datumOd),
+      toDateTime: parseISO(this.datumDo)
+    })
+    .then(response => {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: "Uspješno ste kreirali novi podsjetnik!",
+        showConfirmButton: false,
+        timer: 3000
+      })
+
+      this.getTodo();
+    })  
+    .catch(error => {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: error.response.data,
+          showConfirmButton: false,
+          timer: 3000
+        })
+    });
+  }
 
 }

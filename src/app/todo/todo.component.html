@@ -1,24 +1,53 @@
 <div class="body">
-    <div class="info">
-        <h1 style="color: #E6AC44;">Podsjetnik</h1> <hr style="border: 1px solid #1E2729;">
-        <table style="margin-left: 21em;">
-            <tr>
-              <th>
-              </th>
-            </tr>
-            <tr>
-              <td class="info_box">
-                  <div>
-                      TODO podsjetnik: <hr style="width: 10em; border: 1px solid #1E2729;">
-                      <textarea class="textbox"></textarea>
-                  </div>
-                  <br> <br>
-                  <a>
-                    <div class="btn_prijava" (click)="updateTodo()">Ažuriraj todo listu</div>
-                  </a>
-              </td>
-            </tr>
-          </table> 
+  <div class="info">
+      <h1 style="color: #E6AC44;">Podsjetnik</h1> <hr style="border: 1px solid #1E2729;">
+      <table style="margin-left: 21em;">
+          <tr>
+            <th>
+            </th>
+          </tr>
+          <tr>
+            <td class="info_box">
+              <div>
+                Naslov: <hr style="width: 10em; border: 1px solid #1E2729;">
+                  <input type="text" class="textarea" [(ngModel)]="naslov">
+              </div>
+              <br> <br>
+              <div>
+                Opis: <hr style="width: 10em; border: 1px solid #1E2729;">
+                <input type="text" class="textarea" [(ngModel)]="opis">
+              </div>
+              <br> <br>
+              <div>
+                Trajanje - od: <hr style="width: 10em; border: 1px solid #1E2729;">
+                <input type="datetime-local" class="textarea" [(ngModel)]="datumOd">
+              </div>
+              <br> <br>
+              <div>
+                Trajanje - do: <hr style="width: 10em; border: 1px solid #1E2729;">
+                <input type="datetime-local" class="textarea" [(ngModel)]="datumDo">
+              </div>
+              <br> <br>
+                <div class="btn_prijava" (click)="kreirajTodo()">Kreiraj podsjetnik</div>
+                
+            </td>
+          </tr>
+        </table> 
 
-    </div>
+        <table style="margin-left: 21em; text-align: left;" *ngIf="this.todoevi.length > 0">
+          <tr>
+            <th>
+            </th>
+          </tr>
+          <tr>
+            <td class="info_box"> <br><br>
+              <div *ngFor="let todo of todoevi; index as i;">
+                {{todo.header}}: <b style="color: #E6AC44;">{{todo.fromDateTime}} do {{todo.toDateTime}}</b> <br> <br>
+                <p style="font-size: 18px;">{{todo.description}}</p> <br> <hr> <br> 
+              </div>
+            </td>
+          </tr>
+        </table> 
+
+  </div>
 </div>

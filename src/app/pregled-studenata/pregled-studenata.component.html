@@ -1,0 +1,19 @@
+<h1 style="color: #E6AC44; text-align: center;">Lista studenata</h1> <hr style="border: 1px solid #1E2729;">
+
+<div id="notifications">
+    <div class="notification" *ngFor="let student of this.studenti; index as index">
+        <span style="margin-left: 0.3em; margin-top: 0.3em; color: #fff; float: left;">Ime: <b style="color: #E6AC45">{{student.firstName}} {{student.lastName}}</b></span>
+        <br><br>
+        <span style="margin-left: 0.3em; margin-top: 0.3em; color: #fff;">JMBAG: <b style="color: #E6AC45">{{student.jmbag}}</b></span> 
+        <br><br>
+        <span style="margin-left: 0.3em; margin-top: 0.3em; color: #fff;">Zanimanje: <b style="color: #E6AC45">{{student.occupation}}</b></span>
+        <br><br>
+        <span style="margin-left: 0.3em; margin-top: 0.3em; color: #fff;">Adresa: <b style="color: #E6AC45">{{student.address}}</b></span>
+        <br><br>
+        <span style="margin-left: 0.3em; margin-top: 0.3em; color: #fff;">Školarina: <b style="color: #E6AC45">{{student.scholarship}}</b></span>
+        <br><br>
+        <span style="margin-left: 0.3em; margin-top: 0.3em; color: #fff;">Email: <b style="color: #E6AC45">{{student.account.email}}</b></span>
+        <br><br>
+        <span style="margin-left: 0.3em; margin-top: 0.3em; color: #fff;">Rola: <b style="color: #E6AC45">{{student.account.role}}</b></span>
+    </div>
+</div>

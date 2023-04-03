@@ -21,7 +21,10 @@
                   <br>
                   <div>
                       Scholarship: <hr style="width: 10em; border: 1px solid #1E2729;">
-                      <input type="text" name="scholarship" class="textbox" [(ngModel)]="scholarship"/>
+                      <select name="scholarship" [(ngModel)]="scholarship" style="width: 250px; height: 30px; margin-left: 1em; background-color: #1E2729; color: #AAA; border: 1px solid #3E4446; border-radius: 5px;">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                      </select>
                   </div>
                   <br> <br>
                   <a>
@@ -52,6 +55,16 @@
               </td>
             </tr>
           </table> 
+          <br><br>
+          <div *ngIf="this.getRole() == 'STUDENT'" style="background-color: #181A1B; border: 2px solid #1E2729; width: 50em; padding: 3em; text-align: center; margin-left: 20em; border-radius: 10px;">
+            <h1 style="font-variant: small-caps;">prosjek: <b style="color: #E6AC44">{{ocjene.gpa}}</b></h1>
+            <h1 style="font-variant: small-caps;">Osvojeni ects: <b style="color: #E6AC44">{{ocjene.ects}}</b></h1>
+          </div>
+          <br><br>
+          <div *ngIf="this.getRole() == 'STUDENT'" style="background-color: #181A1B; border: 2px solid #1E2729; width: 50em; padding: 3em; text-align: center; margin-left: 20em; border-radius: 10px;">
+            <h1 style="font-variant: small-caps; text-align: left;"><b style="color: #E6AC44">Upisane ocjene</b></h1>
+            <h1 *ngFor="let course of ocjene.courses; index as i;" style="font-variant: small-caps;">{{course.name}}: <b style="color: #E6AC44">{{course.grade}}</b></h1>
+          </div>
 
     </div>
 </div>

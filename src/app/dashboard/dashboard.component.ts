@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
   
   user: string = "";
   activeMenu = "homepage";
+  rola: string = "STUDENT";
 
   constructor() { }
 
@@ -44,6 +45,10 @@ export class DashboardComponent implements OnInit {
 
   setOpenedComponent(component : string) {
     localStorage.setItem("openedComponent", component);
+  }
+
+  getRola() {
+    this.rola = localStorage.getItem("role");
   }
 
 }

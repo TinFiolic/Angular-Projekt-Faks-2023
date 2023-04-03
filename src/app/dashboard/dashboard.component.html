@@ -7,19 +7,18 @@
         <div class="menu">
             <br> <br>
             <a (click)="this.setActiveMenu('homepage')"><span class="menu_item">kalendar</span></a> <br> <br> <br> <br> 
-            <a (click)="this.setActiveMenu('korisnik')"><span class="menu_item"><a>korisnik</a></span></a>  <br> <br> <br> <br> 
-            <a (click)="this.setActiveMenu('todo')"><span class="menu_item"><a>todo</a></span></a>  <br> <br> <br> <br> 
-            <a (click)="this.setActiveMenu('mail')"><span class="menu_item"><a>e-mail</a></span></a>  <br> <br> <br> <br>
-            <a (click)="this.setActiveMenu('studenti')"><span class="menu_item"><a>pregled studenata</a></span></a>  <br> <br> <br> <br>  
-            <a (click)="this.setActiveMenu('kolegiji')"><span class="menu_item"><a>pregled kolegija</a></span></a>  <br> <br> <br> <br> 
-            <a (click)="this.setActiveMenu('upis_kolegija')"><span class="menu_item"><a>upis kolegija</a></span></a>  <br> <br> <br> <br> 
-            <a (click)="this.setActiveMenu('upisani_kolegiji')"><span class="menu_item"><a>upisani kolegiji</a></span></a>  <br> <br> <br> <br> 
-            <a (click)="this.setActiveMenu('kreacija_kolegija')"><span class="menu_item"><a>kreiraj kolegij</a></span></a>  <br> <br> <br> <br> 
-            <a (click)="this.setActiveMenu('ocjene')"><span class="menu_item"><a>upis ocjena</a></span></a>  <br> <br> <br> <br> 
+            <a (click)="this.setActiveMenu('korisnik')"><span class="menu_item">korisnik</span></a>  <br> <br> <br> <br> 
+            <a (click)="this.setActiveMenu('todo')"><span class="menu_item">todo</span></a>  <br> <br> <br> <br> 
+            <a (click)="this.setActiveMenu('mail')"><span class="menu_item">e-mail</span></a>  <br> <br> <br> <br>
+            <a (click)="this.setActiveMenu('kolegiji')" *ngIf="rola=='STUDENT'"><span class="menu_item">pregled kolegija</span></a>  <br> <br> <br> <br> 
+            <a (click)="this.setActiveMenu('upisani_kolegiji')" *ngIf="rola=='STUDENT'"><span class="menu_item">upisani kolegiji</span></a>  <br> <br> <br> <br> 
+            <a (click)="this.setActiveMenu('studenti')" *ngIf="rola=='PROFESSOR'"><span class="menu_item">pregled studenata</span></a>  <br> <br> <br> <br>  
+            <a (click)="this.setActiveMenu('kreacija_kolegija')" *ngIf="rola=='PROFESSOR'"><span class="menu_item">kreiraj kolegij</span></a>  <br> <br> <br> <br> 
+            <a (click)="this.setActiveMenu('ocjene')" *ngIf="rola=='PROFESSOR'"><span class="menu_item">upis ocjena</span></a>  <br> <br> <br> <br> 
         </div>
     </header>
 </div>
-
+<h1 style="color: pink;">TODO: LOGIN PROVJERI ROLE I SAKRIJ OPCIJE SA MENUA, DOHVAT PODATAKA ZA KORISNIKA, DODAVANJE TODOA</h1>
 <div *ngIf="activeMenu=='homepage'">
 	<app-homepage></app-homepage>
 </div>
@@ -38,4 +37,20 @@
 
 <div *ngIf="activeMenu=='kreacija_kolegija'">
 	<app-kreiraj-kolegij></app-kreiraj-kolegij>
+</div>
+
+<div *ngIf="activeMenu=='upisani_kolegiji'">
+	<app-upisani-kolegiji></app-upisani-kolegiji>
+</div>
+
+<div *ngIf="activeMenu=='studenti'">
+	<app-pregled-studenata></app-pregled-studenata>
+</div>
+
+<div *ngIf="activeMenu=='ocjene'">
+	<app-upis-ocjena></app-upis-ocjena>
+</div>
+
+<div *ngIf="activeMenu=='kolegiji'">
+	<app-pregled-kolegija></app-pregled-kolegija>
 </div>

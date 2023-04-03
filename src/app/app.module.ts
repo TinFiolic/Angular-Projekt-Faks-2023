@@ -17,6 +17,10 @@ import { MailComponent } from './mail/mail.component';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { KreirajKolegijComponent } from './kreiraj-kolegij/kreiraj-kolegij.component';
+import { UpisaniKolegijiComponent } from './upisani-kolegiji/upisani-kolegiji.component';
+import { PregledStudenataComponent } from './pregled-studenata/pregled-studenata.component';
+import { UpisOcjenaComponent } from './upis-ocjena/upis-ocjena.component';
+import { PregledKolegijaComponent } from './pregled-kolegija/pregled-kolegija.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { KreirajKolegijComponent } from './kreiraj-kolegij/kreiraj-kolegij.compo
     HomepageComponent,
     TodoComponent,
     MailComponent,
-    KreirajKolegijComponent
+    KreirajKolegijComponent,
+    UpisaniKolegijiComponent,
+    PregledStudenataComponent,
+    UpisOcjenaComponent,
+    PregledKolegijaComponent
   ],
   imports: [
     BrowserModule,

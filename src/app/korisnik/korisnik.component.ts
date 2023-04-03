@@ -17,11 +17,14 @@ export class KorisnikComponent implements OnInit {
   address : string = "";
   scholarship : string = "";
 
+  ocjene : any[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
     if(this.getRole() == "STUDENT") {
       this.getStudent();
+      this.getOcjene();
     } else {
       this.getProfessor();
     }
@@ -68,6 +71,7 @@ export class KorisnikComponent implements OnInit {
   }
 
   updateStudent() {
+    console.log(this.scholarship);
     axios.post('https://pious2023-backed.onrender.com/student/update', {
       accountId: this.getId(),
       occupation: this.occupation,
@@ -128,6 +132,16 @@ export class KorisnikComponent implements OnInit {
           showConfirmButton: false,
           timer: 3000
         })
+    });
+  }
+
+  getOcjene() {
+    axios.get('https://pious2023-backed.onrender.com/course/grades/account/' + this.getId())
+    .then(response => {
+      this.ocjene = response.data
+    })  
+    .catch(error => {
+        console.log(error.response.data);
     });
   }
 
