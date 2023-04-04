@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         showConfirmButton: false,
         timer: 2000
       })
-
+      console.log(response.data.role);
       localStorage.setItem("user", response.data.username);
       localStorage.setItem("role", response.data.role);
       localStorage.setItem("userId", response.data.id);

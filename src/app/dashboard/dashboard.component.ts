@@ -11,13 +11,17 @@ export class DashboardComponent implements OnInit {
   
   user: string = "";
   activeMenu = "homepage";
-  rola: string = "STUDENT";
+  rola: string = "";
+
+  activeMenuItem: number = 0;
 
   constructor() { }
 
   ngOnInit(): void {
     localStorage.setItem("openedComponent", "dashboard");
     this.user = localStorage.getItem("user");
+    this.getRola();
+    
   }
 
   onLogout(){
@@ -37,6 +41,31 @@ export class DashboardComponent implements OnInit {
 
   setActiveMenu(menu: string){
     this.activeMenu = menu;
+
+    let timerInterval
+    Swal.fire({
+      title: 'Učitavam...',
+      html: '',
+      timer: 1000,
+      timerProgressBar: true,
+      backdrop: `
+      rgba(0,0,0,0.9)
+    `,
+      didOpen: () => {
+        Swal.showLoading()
+        const b = Swal.getHtmlContainer().querySelector('b')
+        timerInterval = setInterval(() => {
+          
+        }, 100)
+      },
+      willClose: () => {
+        clearInterval(timerInterval)
+      }
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+      }
+    })
   }
 
   getUsername(){
@@ -50,5 +79,4 @@ export class DashboardComponent implements OnInit {
   getRola() {
     this.rola = localStorage.getItem("role");
   }
-
 }

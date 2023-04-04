@@ -17,7 +17,9 @@ export class KorisnikComponent implements OnInit {
   address : string = "";
   scholarship : string = "";
 
-  ocjene : any[] = [];
+  ocjene : any = [];
+
+  pokazujOcjene: boolean = false; 
 
   constructor() { }
 
@@ -139,10 +141,24 @@ export class KorisnikComponent implements OnInit {
     axios.get('https://pious2023-backed.onrender.com/course/grades/account/' + this.getId())
     .then(response => {
       this.ocjene = response.data
+      console.log(response.data);
+      if(response.data.length == 0)
+        this.pokazujOcjene = false;
+      else
+        this.pokazujOcjene = true;
     })  
     .catch(error => {
         console.log(error.response.data);
     });
+  }
+
+  otvoriInfo(i: number){
+    Swal.fire(
+      this.ocjene.courses[i].name,
+      "<b> Opis: </b>" + this.ocjene.courses[i].description + "<br><br> <b>Profesor(i)</b>: " + this.ocjene.courses[i].professors + "<br><br> <b>Literatura</b>: " + this.ocjene.courses[i].literature + "<br><br> <b>Semestar</b>: " + this.ocjene.courses[i].semester + "<br><br> <b>ECTS</b>: " + this.ocjene.courses[i].ects,
+
+      'question'
+    )
   }
 
 }

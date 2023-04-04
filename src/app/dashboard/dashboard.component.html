@@ -6,19 +6,19 @@
     <header>
         <div class="menu">
             <br> <br>
-            <a (click)="this.setActiveMenu('homepage')"><span class="menu_item">kalendar</span></a> <br> <br> <br> <br> 
-            <a (click)="this.setActiveMenu('korisnik')"><span class="menu_item">korisnik</span></a>  <br> <br> <br> <br> 
-            <a (click)="this.setActiveMenu('todo')"><span class="menu_item">todo</span></a>  <br> <br> <br> <br> 
-            <a (click)="this.setActiveMenu('mail')"><span class="menu_item">e-mail</span></a>  <br> <br> <br> <br>
-            <a (click)="this.setActiveMenu('kolegiji')" *ngIf="rola=='STUDENT'"><span class="menu_item">pregled kolegija</span></a>  <br> <br> <br> <br> 
-            <a (click)="this.setActiveMenu('upisani_kolegiji')" *ngIf="rola=='STUDENT'"><span class="menu_item">upisani kolegiji</span></a>  <br> <br> <br> <br> 
-            <a (click)="this.setActiveMenu('studenti')" *ngIf="rola=='PROFESSOR'"><span class="menu_item">pregled studenata</span></a>  <br> <br> <br> <br>  
-            <a (click)="this.setActiveMenu('kreacija_kolegija')" *ngIf="rola=='PROFESSOR'"><span class="menu_item">kreiraj kolegij</span></a>  <br> <br> <br> <br> 
-            <a (click)="this.setActiveMenu('ocjene')" *ngIf="rola=='PROFESSOR'"><span class="menu_item">upis ocjena</span></a>  <br> <br> <br> <br> 
+            <a (click)="this.setActiveMenu('homepage'); activeMenuItem = 1" [ngClass]="{ 'active': activeMenuItem == 1 }"><span class="menu_item" id="kalendar">kalendar</span></a> <br> <br>
+            <a (click)="this.setActiveMenu('korisnik'); activeMenuItem = 2" [ngClass]="{ 'active': activeMenuItem == 2 }"><span class="menu_item" id="korisnik">korisnik</span></a>  <br> <br>
+            <a (click)="this.setActiveMenu('todo'); activeMenuItem = 3" [ngClass]="{ 'active': activeMenuItem == 3 }"><span class="menu_item" id="todo">todo</span></a>   <br> <br>
+            <a (click)="this.setActiveMenu('mail'); activeMenuItem = 4" [ngClass]="{ 'active': activeMenuItem == 4 }"><span class="menu_item" id="mail">e-mail</span></a>   <br> <br>
+            <a (click)="this.setActiveMenu('kolegiji'); activeMenuItem = 5" *ngIf="rola=='STUDENT'" [ngClass]="{ 'active': activeMenuItem == 5 }"><span class="menu_item" id="kolegiji">upis kolegija</span></a> <br> <br>
+            <a (click)="this.setActiveMenu('upisani_kolegiji'); activeMenuItem = 6" *ngIf="rola=='STUDENT'" [ngClass]="{ 'active': activeMenuItem == 6 }"><span class="menu_item" id="upisani_kolegiji">upisani kolegiji</span></a> <br> <br> 
+            <a (click)="this.setActiveMenu('studenti'); activeMenuItem = 7" *ngIf="rola=='PROFESSOR'" [ngClass]="{ 'active': activeMenuItem == 7 }"><span class="menu_item" id="studenti">pregled studenata</span></a> <br> <br>
+            <a (click)="this.setActiveMenu('kreacija_kolegija'); activeMenuItem = 8" *ngIf="rola=='PROFESSOR'" [ngClass]="{ 'active': activeMenuItem == 8 }"><span class="menu_item" id="kreiraj">kreiraj kolegij</span></a>  <br> <br>
+            <a (click)="this.setActiveMenu('ocjene'); activeMenuItem = 9" *ngIf="rola=='PROFESSOR'" [ngClass]="{ 'active': activeMenuItem == 9 }"><span class="menu_item" id="upis">upis ocjena</span></a>  <br> <br> 
+            <a (click)="this.onLogout()"><span class="menu_item">odjava</span></a>  <br> <br> 
         </div>
     </header>
 </div>
-<h1 style="color: pink;">TODO: LOGIN PROVJERI ROLE I SAKRIJ OPCIJE SA MENUA, DOHVAT PODATAKA ZA KORISNIKA, DODAVANJE TODOA</h1>
 <div *ngIf="activeMenu=='homepage'">
 	<app-homepage></app-homepage>
 </div>
