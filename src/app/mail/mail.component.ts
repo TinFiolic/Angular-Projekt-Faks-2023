@@ -35,6 +35,7 @@ export class MailComponent {
         showConfirmButton: false,
         timer: 2000
       })
+      console.log(response.data);
     })  
     .catch(error => {
       console.log(error.response.data);

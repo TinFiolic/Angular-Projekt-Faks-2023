@@ -68,7 +68,7 @@ export class HomepageComponent implements OnInit {
   }
 
   async getUsers() {
-    axios.get('https://pious2023-backed.onrender.com/schedule/student/' + localStorage.getItem("userId"))
+    axios.get('https://pious2023-backed.onrender.com/schedule/account/' + localStorage.getItem("userId"))
     .then(response => {
       this.calendarEvents = response.data;
       console.log('Calendar events:', this.calendarEvents);

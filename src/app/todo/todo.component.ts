@@ -10,10 +10,10 @@ import Swal from 'sweetalert2';
 })
 export class TodoComponent {
 
-  naslov: string;
-  opis: string;
-  datumOd: any;
-  datumDo: any;
+  naslov: string = "";
+  opis: string = "";
+  datumOd: any = "";
+  datumDo: any = "";
 
   todoevi: any = [];
 
@@ -49,7 +49,17 @@ export class TodoComponent {
   }
 
   kreirajTodo() {
-    console.log(this.naslov + " " + this.opis + " " + parseISO(this.datumOd) + " " + parseISO(this.datumDo) + " " + localStorage.getItem("userId"));
+    if(this.naslov.length == 0 || this.opis.length == 0) {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: "Molimo, ispunite polja naslova i opisa!",
+        showConfirmButton: false,
+        timer: 3000
+      })
+      return;
+    }
+
     axios.post('https://pious2023-backed.onrender.com/todo/save', {
       accountId: localStorage.getItem("userId"),  
       header: this.naslov,

@@ -33,6 +33,8 @@ export class KreirajKolegijComponent {
       this.listaProfesorId.push(value.id);
     }); 
 
+    console.log(this.listaProfesorId);
+
     axios.post('https://pious2023-backed.onrender.com/course/save', {
       name: this.ime,
       ects: this.ects,
