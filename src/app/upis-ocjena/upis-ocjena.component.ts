@@ -24,10 +24,9 @@ export class UpisOcjenaComponent {
 
   upisiOcjenu() {
     axios.post('https://pious2023-backed.onrender.com/grade/save', {
-      emailTo: "nebitanmail@email.com",
-      grade: this.ocjena,
+      accountId: this.odabraniStudent,
       courseId: this.odabraniKolegij,
-      accountId: this.odabraniStudent
+      grade: this.ocjena
     })
     .then(response => {
       Swal.fire({
