@@ -10,16 +10,15 @@ import Swal from 'sweetalert2';
 export class UpisOcjenaComponent {
 
   listaStudenata : any[] = [];
-  odabraniStudent : number = 1;
+  odabraniStudent : number;
 
   listaKolegija : any[] = [];
-  odabraniKolegij : number = 1;
+  odabraniKolegij : number;
 
   ocjena : number;
 
   ngOnInit(): void {
     this.getStudents();
-    this.getKolegiji();
   }
 
   upisiOcjenu() {
@@ -54,6 +53,7 @@ export class UpisOcjenaComponent {
     .then(response => {
       this.listaStudenata = response.data;
       this.odabraniStudent = this.listaStudenata[0].account.id;
+      this.getKolegiji();
     })  
     .catch(error => {
       console.log(error);
