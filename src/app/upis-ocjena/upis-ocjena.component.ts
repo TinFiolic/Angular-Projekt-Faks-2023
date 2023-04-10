@@ -61,7 +61,7 @@ export class UpisOcjenaComponent {
   }
 
   getKolegiji() {
-    axios.get('https://pious2023-backed.onrender.com/course/account/' + this.odabraniStudent)
+    axios.get('https://pious2023-backed.onrender.com/course/account/' + localStorage.getItem("userId"))
     .then(response => {
       if(response.data != null) {
         this.listaKolegija = response.data;
